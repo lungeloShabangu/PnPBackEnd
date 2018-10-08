@@ -20,13 +20,11 @@ public class CourierController {
 	@Autowired
 	private CourierRepository courierRepos;
 	
-	// Method for getting on specific product
 	@GetMapping("/courier/{id}")
 	public Optional<Courier> getProduct(@PathVariable Long id){
 		return courierRepos.findById(id);
 	}
 	
-	// Method for deleting product
 	@DeleteMapping("/courier/{id}")
 	public boolean deleteCourier(@PathVariable Long id){
 		courierRepos.deleteById(id);
@@ -34,12 +32,12 @@ public class CourierController {
 	}
 	//
 	@PostMapping("/courier/{id}")
-	public Courier addProduct(Courier courier) {
+	public Courier addCourier(Courier courier) {
 		return courierRepos.save(courier);
 	}
 	//
 	@PutMapping("/courier/{id}")
-	public Courier updateProduct(Courier courier) {
+	public Courier updateCourier(Courier courier) {
 		return courierRepos.save(courier);
 	}
 }

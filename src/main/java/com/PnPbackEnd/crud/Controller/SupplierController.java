@@ -20,13 +20,11 @@ public class SupplierController {
 	@Autowired
 	private SupplierRepository supplierRepos;
 	
-	// Method for getting on specific product
 	@GetMapping("/supplier/{id}")
 	public Optional<Supplier> getSupplier(@PathVariable Long id){
 		return supplierRepos.findById(id);
 	}
 	
-	// Method for deleting supplier
 	@DeleteMapping("/supplier/{id}")
 	public boolean deleteSupplier(@PathVariable Long id){
 		supplierRepos.deleteById(id);

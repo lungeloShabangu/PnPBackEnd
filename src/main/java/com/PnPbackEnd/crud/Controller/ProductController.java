@@ -22,19 +22,16 @@ public class ProductController {
 	@Autowired
 	private ProductRepository productRepos;
 	
-	// Method to get all products
 	@GetMapping("/products")
 	public List<Products> getProducts(){
 		return productRepos.findAll();
 	}
 	
-	// Method for getting on specific product
 	@GetMapping("/products/{id}")
 	public Optional<Products> getProduct(@PathVariable Long id){
 		return productRepos.findById(id);
 	}
 	
-	// Method for deleting product
 	@DeleteMapping("/products/{id}")
 	public boolean deleteProduct(@PathVariable Long id){
 		productRepos.deleteById(id);

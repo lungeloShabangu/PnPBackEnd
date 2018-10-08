@@ -20,13 +20,11 @@ public class OrderController {
 	@Autowired
 	private OrderRepository orderRepos;
 	
-	// Method for getting on specific product
 	@GetMapping("/order/{id}")
 	public Optional<Order> getOrder(@PathVariable Long id){
 		return orderRepos.findById(id);
 	}
 	
-	// Method for deleting product
 	@DeleteMapping("/order/{id}")
 	public boolean deleteOrder(@PathVariable Long id){
 		orderRepos.deleteById(id);
